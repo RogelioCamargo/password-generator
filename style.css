@@ -87,14 +87,14 @@ main {
 .pw-generated .button-container {
   display: flex;
   gap: 1.6rem;
-	align-items: center;
+  align-items: center;
 }
 
 .pw-generated .copied-text {
   color: var(--neon-green);
   text-transform: uppercase;
-	font-size: 1.8rem;
-	line-height: 2.4rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
 }
 
 .pw-generated .button-icon {
