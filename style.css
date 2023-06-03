@@ -249,6 +249,9 @@ main {
   padding: 1.8rem 0;
   background-color: var(--neon-green);
   border: 0;
+	text-transform: uppercase;
+	font-weight: 700;
+	cursor: pointer;
 }
 
 .pw-form button img {
