@@ -1,29 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Password generator app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  Password Generator
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body>
+    <main>
+      <h1>Password Generator</h1>
+			
+      <div class="password-generated">
+        <h2>P4$5W0rD!</h2>
+        <img src="./assets/images/icon-copy.svg" alt="copy password icon" />
+      </div>
 
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
-</body>
+      <form>
+        <label>
+          Character Length
+          <input type="range" id="characterLength" name="characterLength" />
+        </label>
+        <label>
+          Include Uppercase Letters
+          <input
+            type="checkbox"
+            name="hasUppercaseLetters"
+            id="hasUppercaseLetters"
+          />
+          <span class="checkmark"></span>
+        </label>
+        <label>
+          Include Lowercase Letters
+          <input
+            type="checkbox"
+            name="hasLowercaseLetters"
+            id="hasLowercaseLetters"
+          />
+          <span class="checkmark"></span>
+        </label>
+        <label>
+          Include Numbers
+          <input
+            type="checkbox"
+            name="hasLowercaseLetters"
+            id="hasLowercaseLetters"
+          />
+          <span class="checkmark"></span>
+        </label>
+        <label>
+          Include Symbols
+          <input
+            type="checkbox"
+            name="hasLowercaseLetters"
+            id="hasLowercaseLetters"
+          />
+          <span class="checkmark"></span>
+        </label>
+        <div>
+          <div>Strength</div>
+          <div>
+            <div>Medium</div>
+            <div class="bars">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+        <button type="submit">Generate</button>
+      </form>
+    </main>
+  </body>
 </html>
