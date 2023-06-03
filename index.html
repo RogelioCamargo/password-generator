@@ -18,22 +18,23 @@
       <h1>Password Generator</h1>
 
       <div class="pw-generated">
-        <h2 class="pw-generated__result">PTx1f5DaFX</h2>
+        <input type="text" placeholder="P4$5W0rD!" class="pw-generated__result" disabled></input>
         <img src="./assets/images/icon-copy.svg" alt="copy password icon" />
       </div>
 
       <form class="pw-form">
         <div>
-					<div class="label-row">
-						<label for="characterLength">Character Length</label>
-						<div class="currentCharacterLength">10</div>
-					</div>
+          <div class="label-row">
+            <label for="characterLengthInput">Character Length</label>
+            <div class="currentCharacterLength">0</div>
+          </div>
           <input
             type="range"
-            id="characterLength"
+            id="characterLengthInput"
             name="characterLength"
-						class="slider"
-            min="1"
+            class="slider"
+            min="0"
+						value="0"
             max="20"
           />
         </div>
@@ -70,7 +71,7 @@
         <div class="pw-strength">
           <div>Strength</div>
           <div>
-            <div class="pw-strength__result">Medium</div>
+            <div class="pw-strength__result"></div>
             <div class="bars">
               <div class="bar"></div>
               <div class="bar"></div>
@@ -79,7 +80,7 @@
             </div>
           </div>
         </div>
-        <button type="submit">
+        <button type="submit" aria-label="Generate Password">
           Generate
           <img
             src="./assets/images/icon-arrow-right.svg"
@@ -88,6 +89,6 @@
         </button>
       </form>
     </main>
-		<script src="./script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
