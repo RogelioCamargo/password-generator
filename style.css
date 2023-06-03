@@ -1,4 +1,7 @@
 :root {
+  --red: #f64a4a;
+  --yellow: #f8cd65;
+  --orange: #fb7c58;
   --neon-green: #a4ffaf;
   --grey: #817d92;
   --dark-grey: #24232c;
@@ -71,14 +74,14 @@ main {
 .pw-generated__result {
   font-size: 2.4rem;
   line-height: 3.2rem;
-	border: none;
-	background-color: transparent;
-	color: var(--white);
-	width: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+  width: 100%;
 }
 
 .pw-generated__result:focus {
-	outline: none;
+  outline: none;
 }
 
 .pw-generated img {
@@ -163,11 +166,8 @@ main {
 }
 
 .container input {
-  position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
 }
 
 .checkmark {
@@ -245,6 +245,26 @@ main {
   height: 2.8rem;
   width: 1rem;
   border: 0.2rem solid var(--white);
+}
+
+.bar--strong {
+  border: none;
+  background-color: var(--neon-green);
+}
+
+.bar--weak {
+  border: none;
+  background-color: var(--orange);
+}
+
+.bar--too-weak {
+  border: none;
+  background-color: var(--red);
+}
+
+.bar--medium {
+  border: none;
+  background-color: var(--yellow);
 }
 
 .pw-form button {

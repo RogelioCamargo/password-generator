@@ -11,30 +11,35 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Password generator app</title>
+    <title>Password Generator</title>
   </head>
   <body>
     <main>
       <h1>Password Generator</h1>
 
       <div class="pw-generated">
-        <input type="text" placeholder="P4$5W0rD!" class="pw-generated__result" disabled></input>
+        <input
+          type="text"
+          placeholder="P4$5W0rD!"
+          class="pw-generated__result"
+          disabled
+        />
         <img src="./assets/images/icon-copy.svg" alt="copy password icon" />
       </div>
 
       <form class="pw-form">
         <div>
           <div class="label-row">
-            <label for="characterLengthInput">Character Length</label>
+            <label for="characterLength">Character Length</label>
             <div class="currentCharacterLength">0</div>
           </div>
           <input
             type="range"
-            id="characterLengthInput"
+            id="characterLength"
             name="characterLength"
             class="slider"
             min="0"
-						value="0"
+            value="0"
             max="20"
           />
         </div>
@@ -43,8 +48,8 @@
             Include Uppercase Letters
             <input
               type="checkbox"
-              name="hasUppercaseLetters"
-              id="hasUppercaseLetters"
+              name="includeUppercase"
+              id="includeUppercase"
             />
             <span class="checkmark"></span>
           </label>
@@ -52,19 +57,19 @@
             Include Lowercase Letters
             <input
               type="checkbox"
-              name="hasLowercaseLetters"
-              id="hasLowercaseLetters"
+              name="includeLowercase"
+              id="includeLowercase"
             />
             <span class="checkmark"></span>
           </label>
           <label class="container">
             Include Numbers
-            <input type="checkbox" name="hasNumbers" id="hasNumbers" />
+            <input type="checkbox" name="includeNumbers" id="includeNumbers" />
             <span class="checkmark"></span>
           </label>
           <label class="container">
             Include Symbols
-            <input type="checkbox" name="hasSymbols" id="hasSymbols" />
+            <input type="checkbox" name="includeSymbols" id="includeSymbols" />
             <span class="checkmark"></span>
           </label>
         </fieldset>
