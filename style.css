@@ -1,5 +1,5 @@
 :root {
-	--neon-green: #A4FFAF;
+  --neon-green: #a4ffaf;
   --grey: #817d92;
   --dark-grey: #24232c;
   --black: #18171f;
@@ -25,7 +25,7 @@ html {
 
 body {
   font-size: 1.6rem;
-	line-height: 2.1rem;
+  line-height: 2.1rem;
   font-family: "JetBrains Mono", monospace;
   background-color: var(--black);
   color: var(--white);
@@ -89,14 +89,50 @@ main {
 }
 
 .label-row {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
 }
 
 .currentCharacterLength {
-	font-size: 2.4rem;
-	line-height: 3.2rem;
-	color: var(--neon-green)
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  color: var(--neon-green);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.8rem;
+  background: linear-gradient(
+    to right,
+    var(--neon-green) 0%,
+		var(--neon-green) 50%,
+    var(--black) 50%,
+    var(--black) 100%
+  );
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
 }
 
 .pw-checkboxes {
@@ -120,14 +156,14 @@ main {
 }
 
 .pw-strength > div:last-child {
-	display: flex;
-	align-items: center;
-	gap: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
 }
 
 .bars {
-	display: flex;
-	gap: 0.8rem;
+  display: flex;
+  gap: 0.8rem;
 }
 
 .bar {
@@ -137,10 +173,11 @@ main {
 }
 
 .pw-form button {
-	padding: 1.8rem 0;
-	background-color: var(--neon-green);
+  padding: 1.8rem 0;
+  background-color: var(--neon-green);
+  border: 0;
 }
 
 .pw-form button img {
-	margin-left: 1rem;
+  margin-left: 1rem;
 }
