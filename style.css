@@ -250,7 +250,6 @@ main {
   background-color: var(--neon-green);
   border: 0;
 	text-transform: uppercase;
-	font-weight: 700;
 	cursor: pointer;
 }
 
