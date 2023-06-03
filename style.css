@@ -1,0 +1,68 @@
+:root {
+  --dark-grey: #24232c;
+  --black: #18171f;
+  --white: #fff;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./assets/fonts/JetBrainsMono-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+button {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pw-generated {
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
+  width: 34.3rem;
+  margin: 0 auto;
+  background-color: var(--dark-grey);
+  padding: 1.6rem;
+}
+
+.pw-generated img {
+	height: 2rem;
+	width: 1.75rem;
+}
