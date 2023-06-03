@@ -12,7 +12,7 @@
 @font-face {
   font-family: "JetBrains Mono";
   src: url("./assets/fonts/JetBrainsMono-VariableFont_wght.ttf");
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -35,7 +35,8 @@ body {
   min-height: 100vh;
 }
 
-input {
+input,
+button {
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -330,6 +331,10 @@ main {
   button {
     font-size: 1.8rem;
     line-height: 2.4rem;
+  }
+
+  main {
+    gap: 2.4rem;
   }
 
   .pw-generated {
