@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
       type="image/png"
@@ -18,55 +18,58 @@
       <h1>Password Generator</h1>
 
       <div class="pw-generated">
-        <h2>PTx1f5DaFX</h2>
+        <h2 class="pw-generated__result">PTx1f5DaFX</h2>
         <img src="./assets/images/icon-copy.svg" alt="copy password icon" />
       </div>
 
       <form class="pw-form">
-        <label>
-          Character Length
-          <input type="range" id="characterLength" name="characterLength" />
-        </label>
-        <label>
-          Include Uppercase Letters
-          <input
-            type="checkbox"
-            name="hasUppercaseLetters"
-            id="hasUppercaseLetters"
-          />
-          <span class="checkmark"></span>
-        </label>
-        <label>
-          Include Lowercase Letters
-          <input
-            type="checkbox"
-            name="hasLowercaseLetters"
-            id="hasLowercaseLetters"
-          />
-          <span class="checkmark"></span>
-        </label>
-        <label>
-          Include Numbers
-          <input
-            type="checkbox"
-            name="hasLowercaseLetters"
-            id="hasLowercaseLetters"
-          />
-          <span class="checkmark"></span>
-        </label>
-        <label>
-          Include Symbols
-          <input
-            type="checkbox"
-            name="hasLowercaseLetters"
-            id="hasLowercaseLetters"
-          />
-          <span class="checkmark"></span>
-        </label>
         <div>
+					<div class="label-row">
+						<label for="characterLength">Character Length</label>
+						<div class="currentCharacterLength">10</div>
+					</div>
+          <input
+            type="range"
+            id="characterLength"
+            name="characterLength"
+            min="1"
+            max="20"
+          />
+        </div>
+        <fieldset class="pw-checkboxes">
+          <label>
+            Include Uppercase Letters
+            <input
+              type="checkbox"
+              name="hasUppercaseLetters"
+              id="hasUppercaseLetters"
+            />
+            <span class="checkmark"></span>
+          </label>
+          <label>
+            Include Lowercase Letters
+            <input
+              type="checkbox"
+              name="hasLowercaseLetters"
+              id="hasLowercaseLetters"
+            />
+            <span class="checkmark"></span>
+          </label>
+          <label>
+            Include Numbers
+            <input type="checkbox" name="hasNumbers" id="hasNumbers" />
+            <span class="checkmark"></span>
+          </label>
+          <label>
+            Include Symbols
+            <input type="checkbox" name="hasSymbols" id="hasSymbols" />
+            <span class="checkmark"></span>
+          </label>
+        </fieldset>
+        <div class="pw-strength">
           <div>Strength</div>
           <div>
-            <div>Medium</div>
+            <div class="pw-strength__result">Medium</div>
             <div class="bars">
               <div class="bar"></div>
               <div class="bar"></div>
@@ -75,7 +78,13 @@
             </div>
           </div>
         </div>
-        <button type="submit">Generate</button>
+        <button type="submit">
+          Generate
+          <img
+            src="./assets/images/icon-arrow-right.svg"
+            alt="arrow pointing right icon"
+          />
+        </button>
       </form>
     </main>
   </body>
