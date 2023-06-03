@@ -86,7 +86,7 @@ main {
 
 .pw-generated .icon {
   color: var(--neon-green);
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .pw-generated .icon:hover {

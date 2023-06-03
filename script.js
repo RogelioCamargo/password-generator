@@ -15,6 +15,7 @@ slider.addEventListener("input", function updateCharacterLength() {
 // Update password strength indicator
 var form = document.querySelector(".pw-form");
 var bars = document.querySelectorAll(".bar");
+var strengthLabel = document.querySelector(".pw-strength__result");
 form.addEventListener("change", function updateStrengthIndicator() {
   var options = {
     characterLength: 0,
@@ -27,6 +28,7 @@ form.addEventListener("change", function updateStrengthIndicator() {
     bar.className = "";
     bar.classList.add("bar");
   }
+  strengthLabel.textContent = "";
 
   var formData = new FormData(form);
   var passwordStength = 0;
@@ -41,22 +43,34 @@ form.addEventListener("change", function updateStrengthIndicator() {
     }
   }
 
-  const numberOfBars = Math.floor(passwordStength / 25);
+  // if characterLength is 0, don't update
+  if (!options.characterLength) {
+    return;
+  }
 
-  let colorOfBars;
-  if (numberOfBars == 4) {
+  let colorOfBars, numberOfBars;
+  if (passwordStength >= 75 && options.characterLength >= 10) {
+    numberOfBars = 4;
+    label = "Strong";
     colorOfBars = "bar--strong";
-  } else if (numberOfBars == 3) {
+  } else if (passwordStength >= 50 && options.characterLength >= 7) {
+    numberOfBars = 3;
+    label = "Medium";
     colorOfBars = "bar--medium";
-  } else if (numberOfBars == 2) {
+  } else if (passwordStength >= 25) {
+    numberOfBars = 2;
+    label = "Weak";
     colorOfBars = "bar--weak";
   } else {
+    numberOfBars = 1;
+    label = "Too Weak!";
     colorOfBars = "bar--too-weak";
   }
 
   for (let i = 0; i < numberOfBars; i++) {
     bars[i].classList.add(colorOfBars);
   }
+  strengthLabel.textContent = label;
 });
 
 // Form submission
