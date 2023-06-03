@@ -101,6 +101,8 @@ main {
   color: var(--neon-green);
 }
 
+/* Slider */
+
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -108,7 +110,7 @@ main {
   background: linear-gradient(
     to right,
     var(--neon-green) 0%,
-		var(--neon-green) 50%,
+    var(--neon-green) 50%,
     var(--black) 50%,
     var(--black) 100%
   );
@@ -133,6 +135,77 @@ main {
   border-radius: 50%;
   background: var(--white);
   cursor: pointer;
+}
+
+.slider:hover::-webkit-slider-thumb {
+  background: var(--black);
+  border: 2px solid var(--neon-green);
+}
+
+.slider:hover::-moz-range-thumb {
+  background: var(--black);
+  border: 2px solid var(--neon-green);
+}
+
+/* Checkboxes */
+/* https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  border: 0.2rem solid var(--white);
+}
+
+.checkmark:hover {
+  border-color: var(--neon-green);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: var(--neon-green);
+  border: none;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark::after {
+  left: 0.65rem;
+  top: 0.3rem;
+  width: 0.4rem;
+  height: 1rem;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .pw-checkboxes {
