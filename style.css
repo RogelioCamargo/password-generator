@@ -84,9 +84,13 @@ main {
   outline: none;
 }
 
-.pw-generated img {
-  height: 2rem;
-  width: 1.75rem;
+.pw-generated .icon {
+  color: var(--neon-green);
+	cursor: pointer;
+}
+
+.pw-generated .icon:hover {
+  color: var(--white);
 }
 
 /* Form */
@@ -270,11 +274,16 @@ main {
 .pw-form button {
   padding: 1.8rem 0;
   background-color: var(--neon-green);
-  border: 0;
+  border: 0.2rem solid var(--neon-green);
   text-transform: uppercase;
   cursor: pointer;
 }
 
-.pw-form button img {
+.pw-form button:hover {
+  background-color: var(--black);
+  color: var(--neon-green);
+}
+
+.pw-form button .icon {
   margin-left: 1rem;
 }

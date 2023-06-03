@@ -12,7 +12,52 @@ slider.addEventListener("input", function updateCharacterLength() {
   slider.style.background = progressColor;
 });
 
+// Update password strength indicator
+var form = document.querySelector(".pw-form");
+var bars = document.querySelectorAll(".bar");
+form.addEventListener("change", function updateStrengthIndicator() {
+  var options = {
+    characterLength: 0,
+    includeLowercase: false,
+    includeUppercase: false,
+    includeNumbers: false,
+    includeSymbols: false,
+  };
+  for (let bar of bars) {
+    bar.className = "";
+    bar.classList.add("bar");
+  }
 
+  var formData = new FormData(form);
+  var passwordStength = 0;
+  for (const [name, value] of formData) {
+    if (value == "on") {
+      options[name] = true;
+      passwordStength += 20;
+    } else if (name == "characterLength") {
+      const length = parseInt(value);
+      options[name] = length;
+      passwordStength += length;
+    }
+  }
+
+  const numberOfBars = Math.floor(passwordStength / 25);
+
+  let colorOfBars;
+  if (numberOfBars == 4) {
+    colorOfBars = "bar--strong";
+  } else if (numberOfBars == 3) {
+    colorOfBars = "bar--medium";
+  } else if (numberOfBars == 2) {
+    colorOfBars = "bar--weak";
+  } else {
+    colorOfBars = "bar--too-weak";
+  }
+
+  for (let i = 0; i < numberOfBars; i++) {
+    bars[i].classList.add(colorOfBars);
+  }
+});
 
 // Form submission
 form.addEventListener("submit", function onSubmit(event) {
