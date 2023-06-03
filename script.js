@@ -12,6 +12,23 @@ slider.addEventListener("input", function updateCharacterLength() {
   slider.style.background = progressColor;
 });
 
+// Clip data to clipboard
+var copyButton = document.querySelector("#copyPasswordButton");
+copyButton.addEventListener("click", async function copyPassword() {
+  if (navigator.clipboard) {
+    let passwordGenereatedInput = document.querySelector(
+      ".pw-generated__result"
+    );
+    if (!passwordGenereatedInput.value) {
+      return;
+    }
+
+    await navigator.clipboard.writeText(passwordGenereatedInput.value);
+    let copiedText = document.querySelector(".copied-text");
+    copiedText.textContent = "Copied";
+  }
+});
+
 // Update password strength indicator
 var form = document.querySelector(".pw-form");
 var bars = document.querySelectorAll(".bar");
